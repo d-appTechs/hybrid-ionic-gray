@@ -32,54 +32,54 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: '/tab',
+    .state('gray', {
+    url: '/gray',
     abstract: true,
-    templateUrl: 'templates/tabs.html'
+    templateUrl: 'templates/grays.html'
   })
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
+  .state('gray.dash', {
     url: '/dash',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
+      'gray-dash': {
+        templateUrl: 'templates/gray-dash.html',
         controller: 'DashCtrl'
       }
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+  .state('gray.configs', {
+      url: '/configs',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+        'gray-configs': {
+          templateUrl: 'templates/gray-configs.html',
+          controller: 'ConfigsCtrl'
         }
       }
     })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
+    .state('gray.config-detail', {
+      url: '/configs/:chatId',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+        'gray-configs': {
+          templateUrl: 'templates/config-detail.html',
+          controller: 'ConfigDetailCtrl'
         }
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
+  .state('gray.sync', {
+    url: '/sync',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'gray-account': {
+        templateUrl: 'templates/gray-sync.html',
+        controller: 'SyncCtrl'
       }
     }
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/gray/dash');
 
 });
